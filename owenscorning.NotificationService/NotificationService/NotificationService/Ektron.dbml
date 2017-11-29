@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="CMS400OC_COMM_STAG" Class="EktronDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HANSQLDEV02,2429;Initial Catalog=CMS400OC_COMM_STAG;Persist Security Info=True;User ID=CommOC" SettingsObjectName="OwensCorning.NotificationService.Properties.Settings" SettingsPropertyName="CMS400OC_COMM_STAGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.metadata_type" Member="metadata_types">
+    <Type Name="metadata_type">
+      <Column Name="meta_type_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="meta_name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="meta_name_title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="meta_default" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="meta_required" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_tag_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_editable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_separator" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="meta_case_sensitive" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_remove_dups" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_allow_search" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_display" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="selectable_only" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="allow_multi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="meta_selectabletext" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="meta_language" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="object_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meta_display_ee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="metadata_type_content_meta_tbl" Member="content_meta_tbls" ThisKey="meta_type_id" OtherKey="meta_type_id" Type="content_meta_tbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.taxonomy_tbl" Member="Taxonomies">
+    <Type Name="Taxonomy">
+      <Column Name="taxonomy_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_language_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="taxonomy_parent_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_path" Type="System.String" DbType="NVarChar(3600) NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_display_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taxonomy_type" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="taxonomy_user_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inherit_template" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="inherit_template_from" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="template_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="item_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taxonomy_date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="folder_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="image_url" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="category_url" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="synchronize" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="visible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Taxonomy_TaxonomyItem" Member="TaxonomyItems" ThisKey="taxonomy_id,taxonomy_language_id" OtherKey="taxonomy_id,taxonomy_language_id" Type="TaxonomyItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.taxonomy_item_tbl" Member="TaxonomyItems">
+    <Type Name="TaxonomyItem">
+      <Column Name="taxonomy_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_language_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_item_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_item_language" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_item_type" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="taxonomy_item_display_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="taxonomy_item_added_user" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_item_date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="taxonomy_item_date_modified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TaxonomyItem_EKContent" Member="EKContents" ThisKey="taxonomy_item_id" OtherKey="content_id" Type="EKContent" Cardinality="One" />
+      <Association Name="Taxonomy_TaxonomyItem" Member="Taxonomy" ThisKey="taxonomy_id,taxonomy_language_id" OtherKey="taxonomy_id,taxonomy_language_id" Type="Taxonomy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.content" Member="EKContents">
+    <Type Name="EKContent">
+      <Column Name="content_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="content_language" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="content_title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="content_html" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="content_status" Type="System.Char" DbType="NVarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="content_meta_data" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="last_edit_lname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_edit_fname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="last_edit_comment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="last_edit_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="folder_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="inherit_permissions" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inherit_permissions_from" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inherit_xml" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="inherit_xml_from" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="private_content" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="content_teaser" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="published" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="go_live" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="content_text" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="end_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="content_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="approval_method" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="searchable" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="end_date_action" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alias_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="contentfulltextkey" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="asset_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="asset_version" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="xml_config_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="template_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="last_replicated_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="image" Type="System.String" DbType="NVarChar(550)" CanBeNull="true" />
+      <Column Name="private" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="flag_def_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="content_subtype" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Document_EKContent" Member="Document" Storage="_AssetDataTable" ThisKey="asset_id" OtherKey="id" Type="Document" IsForeignKey="true" />
+      <Association Name="TaxonomyItem_EKContent" Member="TaxonomyItem" ThisKey="content_id" OtherKey="taxonomy_item_id" Type="TaxonomyItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.han_vw_AssetDataTable" Member="Documents">
+    <Type Name="Document">
+      <Column Name="id" Type="System.String" DbType="VarChar(50)" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="handle" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="mimeType" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="storage" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="length" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="version" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="dateModified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="label" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="astLanguage" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="assetType" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="publishName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="serverId" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="publishAsPDF" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pubFolderPath" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Association Name="Document_EKContent" Member="EKContents" Storage="_contents" ThisKey="id" OtherKey="asset_id" Type="EKContent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.content_meta_tbl" Member="content_meta_tbls">
+    <Type Name="content_meta_tbl">
+      <Column Name="meta_type_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="content_id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="content_language" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="meta_value" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="active" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="EKContent_content_meta_tbl" Member="EKContent" Storage="_EkContent" ThisKey="content_id,content_language" OtherKey="content_id,content_language" Type="EKContent" IsForeignKey="true" />
+      <Association Name="metadata_type_content_meta_tbl" Member="metadata_type" ThisKey="meta_type_id" OtherKey="meta_type_id" Type="metadata_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

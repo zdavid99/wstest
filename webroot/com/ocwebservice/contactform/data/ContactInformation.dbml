@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="owc_owens" EntityNamespace="OwensCorning.ContactService.Data" ContextNamespace="OwensCorning.ContactService.Data" Class="ContactInformationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=hansqldev01,2429;Initial Catalog=owc_owens;Persist Security Info=True;User ID=han_sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="owc_owensConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.oc_contactlist" Member="oc_contactlists">
+    <Type Name="oc_contactlist">
+      <Column Name="pk_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="business_area" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="source_form_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="source_form_path" Type="System.String" DbType="NVarChar(768)" CanBeNull="true" />
+      <Column Name="external_key" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="external_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="contact_type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="contact_fullname" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="contact_email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="contact_phone" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="company_name" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="language" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="xml_form_data" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContactListNameMap" Member="ContactListNameMaps">
+    <Type Name="ContactListNameMap">
+      <Column Name="SourceFormName" Type="System.String" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="BusinessName" Type="System.String" CanBeNull="false" />
+      <Column Name="ColumnMap" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

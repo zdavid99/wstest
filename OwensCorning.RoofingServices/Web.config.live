@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<configSections>
+		<remove name="log4net" />
+		<remove name="RewriterConfig" />
+		<remove name="system.web.extensions" />
+		<remove name="scripting" />
+		<remove name="scriptResourceHandler" />
+		<remove name="webServices" />
+		<remove name="jsonSerialization" />
+		<remove name="profileService" />
+		<remove name="authenticationService" />
+		<remove name="roleService" />
+	</configSections>
+	<connectionStrings>
+		<add name="OwensCorning.Roofing"
+      connectionString="Server=ocsql02.oc.iscgnet.com;initial catalog=OCroofing;User Id=ocroofing_dbo;Password=edPwXDMA;MultipleActiveResultSets=True"/>
+	</connectionStrings>
+	<system.web>
+		<authentication mode="Windows" />
+		<compilation debug="true" />
+		<customErrors mode="Off" />
+		<httpModules>
+			<remove name="ModuleRewriter" />
+		</httpModules>
+		<httpHandlers>
+			<remove path="*.asmx" verb="*" />
+			<remove path="*_AppService.axd" verb="*" />
+			<remove path="/rebate" verb="GET" />
+			<remove path="/professional/professionalprograms/rewards/claimdocument" verb="GET" />
+			<remove path="/socialrss/*" verb="GET" />
+			<remove path="ScriptResource.axd" verb="GET,HEAD" />
+		</httpHandlers>
+		<membership>
+			<providers>
+				<clear/>
+			</providers>
+		</membership>
+	</system.web>
+	<!-- When deploying the service library project, the content of the config file must be added to the host's 
+  app.config file. System.Configuration does not support config files for libraries. -->
+	<system.serviceModel>
+		<serviceHostingEnvironment>
+			<baseAddressPrefixFilters>
+				<add prefix="https://roofing.owenscorning.com:443"/>
+				<add prefix="http://roofing.owenscorning.com:80" />
+			</baseAddressPrefixFilters>
+		</serviceHostingEnvironment>
+		<bindings>
+			<wsHttpBinding>
+				<binding name="SecureWSBinding">
+					<security mode="Transport">
+						<transport clientCredentialType="Windows" proxyCredentialType="None" />
+						<!--<message clientCredentialType="Windows" negotiateServiceCredential="false"
+						 algorithmSuite="Default" />-->
+					</security>
+				</binding>
+			</wsHttpBinding>
+		</bindings>
+		<services>
+			<service behaviorConfiguration="OwensCorning.RoofingServices.RoofingLeadsServiceBehavior"
+			 name="OwensCorning.RoofingServices.RoofingLeadsService">
+				<endpoint address="https://roofing.owenscorning.com/RoofingServices/RoofingLeadsService.svc" binding="wsHttpBinding" bindingConfiguration="SecureWSBinding"
+				 name="wsHttpEndpoint" contract="OwensCorning.RoofingServices.Interfaces.IRoofingLeadsService" />
+				<host>
+					<baseAddresses>
+						<add baseAddress="https://roofing.owenscorning.com/RoofingServices" />
+					</baseAddresses>
+				</host>
+			</service>
+		</services>
+		<behaviors>
+			<serviceBehaviors>
+				<behavior name="OwensCorning.RoofingServices.RoofingLeadsServiceBehavior">
+					<serviceMetadata httpGetEnabled="false" httpsGetEnabled="true"
+						httpsGetUrl="https://roofing.owenscorning.com/RoofingServices/RoofingLeadsService.svc" />
+					<serviceDebug includeExceptionDetailInFaults="false" />
+				</behavior>
+				<behavior name="ServiceCredentials">
+					<serviceCredentials>
+						<userNameAuthentication userNamePasswordValidationMode="MembershipProvider" />
+					</serviceCredentials>
+				</behavior>
+			</serviceBehaviors>
+		</behaviors>
+	</system.serviceModel>
+</configuration>

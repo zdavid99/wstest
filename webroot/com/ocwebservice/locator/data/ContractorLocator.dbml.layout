@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.875" name="Locator">
+  <DataContextMoniker Name="/ContractorLocatorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="18997aae-a452-4e63-bfec-1b266bf071a4" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ContractorLocatorDataContext/RawBMContractorType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e7f976a-5ea0-48b0-a2c7-fcc0c1a900b9" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce7024cc-feb6-4827-8409-c74a6747c7ba" absoluteBounds="3.75, 0.75, 2, 7.9245426432291648">
+      <DataClassMoniker Name="/ContractorLocatorDataContext/RawBMContractor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8a3c067-adbf-4a6c-9dde-262f2a4d0efa" absoluteBounds="3.765, 1.21, 1.9700000000000002, 7.3645426432291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e684bbed-105f-4cf1-a87a-959714f3df7d" absoluteBounds="0.75, 3.375, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/ContractorLocatorDataContext/RawBMContractorInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ea2cfca-bddc-4cb5-8654-a26f5826362d" absoluteBounds="0.76499999999999968, 3.835, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4e4c690-1fb4-4ed8-b75f-f779f865b476" absoluteBounds="6.75, 2.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ContractorLocatorDataContext/RawBMLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24ea9e21-6e28-4e05-a0c8-612cce8eb12b" absoluteBounds="6.7650000000000006, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 1.53929768880208); (2.75 : 1.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ContractorLocatorDataContext/RawBMContractor/RawBMContractor_RawBMContractorType" />
+      <nodes>
+        <classShapeMoniker Id="ce7024cc-feb6-4827-8409-c74a6747c7ba" />
+        <classShapeMoniker Id="18997aae-a452-4e63-bfec-1b266bf071a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.22195556640625); (3.75 : 5.22195556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ContractorLocatorDataContext/RawBMContractorInfo/RawBMContractorInfo_RawBMContractor" />
+      <nodes>
+        <classShapeMoniker Id="e684bbed-105f-4cf1-a87a-959714f3df7d" />
+        <classShapeMoniker Id="ce7024cc-feb6-4827-8409-c74a6747c7ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.75 : 2.91429768880208); (5.75 : 2.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ContractorLocatorDataContext/RawBMLocation/RawBMLocation_RawBMContractor" />
+      <nodes>
+        <classShapeMoniker Id="d4e4c690-1fb4-4ed8-b75f-f779f865b476" />
+        <classShapeMoniker Id="ce7024cc-feb6-4827-8409-c74a6747c7ba" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,11 @@
+bin
+obj
+*.suo
+PrecompiledWeb
+Bin
+*.csproj.user
+applogs
+_UpgradeReport_Files
+UpgradeLog.XML
+*ReSharper*
+*resharper*

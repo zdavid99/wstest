@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OwensCorning.Locator.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OwensCorning.Locator.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:59579/Locator.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Builder">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Contractor">
+        <xs:sequence>
+          <xs:element name="_x003C_BuilderPrograms_x003E_k__BackingField" type="tns:BuilderPrograms" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Builder" nillable="true" type="tns:Builder" />
+  <xs:complexType name="Contractor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LocatorResult">
+        <xs:sequence>
+          <xs:element name="_x003C_AsmEmail_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_AsmFirstName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_AsmLastName_x003E_k__BackingField" nillable="true" type="xs:string" />
+          <xs:element name="_x003C_ContractorPrograms_x003E_k__BackingField" type="tns:ContractorPrograms" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contractor" nillable="true" type="tns:Contractor" />
+  <xs:complexType name="LocatorResult">
+    <xs:sequence>
+      <xs:element name="_x003C_Address2_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Address_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_City_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Company_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ContactName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Distance_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_Email_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Fax_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Phone_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_State_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Website_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Zip_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="locatorBusinessType" type="tns:LocatorBusinessTypes" />
+      <xs:element name="locatorResultType" type="tns:LocatorResultTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocatorResult" nillable="true" type="tns:LocatorResult" />
+  <xs:simpleType name="LocatorBusinessTypes">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Roofing">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Masonry">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ResidentialInsulation">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LocatorBusinessTypes" nillable="true" type="tns:LocatorBusinessTypes" />
+  <xs:simpleType name="LocatorResultTypes">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Dealer">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Installer">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Builder">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="LocatorResultTypes" nillable="true" type="tns:LocatorResultTypes" />
+  <xs:simpleType name="ContractorPrograms">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="HasProConnectProfile">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsExteriorFx">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsPreferred">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsPreferredPride">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsPlatinumPreferred">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsTopOfTheHouse">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsPlatinumAwardWinner">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">127</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ContractorPrograms" nillable="true" type="tns:ContractorPrograms" />
+  <xs:simpleType name="BuilderPrograms">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsSystemThinkingBuilder">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IsQuietZoneBuilder">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="BuilderPrograms" nillable="true" type="tns:BuilderPrograms" />
+  <xs:complexType name="Dealer">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LocatorResult">
+        <xs:sequence>
+          <xs:element name="_x003C_DealerLevel_x003E_k__BackingField" type="tns:DealerLevels" />
+          <xs:element name="_x003C_DealerPrograms_x003E_k__BackingField" type="tns:DealerPrograms" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Dealer" nillable="true" type="tns:Dealer" />
+  <xs:simpleType name="DealerLevels">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="PlatinumElite">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Platinum">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Gold" />
+          <xs:enumeration value="Silver">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="DealerLevels" nillable="true" type="tns:DealerLevels" />
+  <xs:simpleType name="DealerPrograms">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="None">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="StocksRapidFlow">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="StocksRoofing">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="DealerPrograms" nillable="true" type="tns:DealerPrograms" />
+  <xs:complexType name="LocatorSearchOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DealerLevel" type="tns:DealerLevels" />
+      <xs:element minOccurs="0" name="DistributorCodeListId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocatorBusinessType" type="tns:LocatorBusinessTypes" />
+      <xs:element minOccurs="0" name="LocatorResultType" type="tns:LocatorResultTypes" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxResultsPerType" type="xs:int" />
+      <xs:element minOccurs="0" name="Radius" type="xs:double" />
+      <xs:element minOccurs="0" name="RequireEmailAddress" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SearchType" type="tns:SearchType" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeCodeListId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocatorSearchOptions" nillable="true" type="tns:LocatorSearchOptions" />
+  <xs:simpleType name="SearchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Map" />
+      <xs:enumeration value="Zip" />
+      <xs:enumeration value="Advanced" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchType" nillable="true" type="tns:SearchType" />
+  <xs:complexType name="ArrayOfContractor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contractor" nillable="true" type="tns:Contractor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractor" nillable="true" type="tns:ArrayOfContractor" />
+  <xs:complexType name="ArrayOfDealer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dealer" nillable="true" type="tns:Dealer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDealer" nillable="true" type="tns:ArrayOfDealer" />
+  <xs:complexType name="ArrayOfBuilder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Builder" nillable="true" type="tns:Builder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuilder" nillable="true" type="tns:ArrayOfBuilder" />
+</xs:schema>

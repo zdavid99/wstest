@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="owc_owens" EntityNamespace="com.ocwebservice.locator.model" ContextNamespace="com.ocwebservice.locator.data" Class="ContractorLocatorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ocsql01.oc.iscgnet.com;Initial Catalog=owens;User ID=owens_dbo;MultipleActiveResultSets=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OwensCorning.Locator.Owens" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dealer_type_map" Member="RawBMContractorTypes">
+    <Type Name="RawBMContractorType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dealer_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="type_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DealerType" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Association Name="RawBMContractor_RawBMContractorType" Member="RawBMContractor" ThisKey="dealer_id" OtherKey="id" Type="RawBMContractor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dealers" Member="RawBMContractors">
+    <Type Name="RawBMContractor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="zip" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="address1" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="address2" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="phone2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="store" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="pp_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="region" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="tradearea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="salesrep" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="contact" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ProConnectFlag" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="showroom" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ctitle" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DealerType" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WebVisible" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPreferredPlat" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IsExFxCertified" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPreferredPride" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SalesRepFirstName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SalesRepID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SalesRepEmailID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SalesRepUserName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MemberEmailID" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IsQuietZoneBuilder" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Platinum_Pride_Award" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Top_Of_The_House_Certified" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Green_Pledge" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="RewardsLevel" Type="System.Int32" DbType="INT" CanBeNull="true" />
+      <Column Name="Total_Protection_Rfg_System" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="RawBMContractor_RawBMContractorType" Member="RawBMContractorTypes" ThisKey="id" OtherKey="dealer_id" Type="RawBMContractorType" />
+      <Association Name="RawBMContractorInfo_RawBMContractor" Member="RawBMContractorInfo" ThisKey="pp_id" OtherKey="id" Type="RawBMContractorInfo" IsForeignKey="true" />
+      <Association Name="RawBMLocation_RawBMContractor" Member="RawBMLocation" ThisKey="zip" OtherKey="PostalCode" Type="RawBMLocation" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pinkpages" Member="RawBMContractorInfos">
+    <Type Name="RawBMContractorInfo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="photo_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="photo_align" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="logo_active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="logo_align" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="logo_gif" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="photo_gif" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="hours" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="builder_alliance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DealerType" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="RawBMContractorInfo_RawBMContractor" Member="RawBMContractors" ThisKey="id" OtherKey="pp_id" Type="RawBMContractor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dealer_zipcodes" Member="RawBMLocations">
+    <Type Name="RawBMLocation">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zipcode" Member="PostalCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="longitude" Member="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="latitude" Member="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="RawBMLocation_RawBMContractor" Member="RawBMContractors" ThisKey="PostalCode" OtherKey="zip" Type="RawBMContractor" />
+    </Type>
+  </Table>
+</Database>

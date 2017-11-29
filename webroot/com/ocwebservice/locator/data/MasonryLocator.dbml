@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Stone" EntityNamespace="com.ocwebservice.locator.model" ContextNamespace="com.ocwebservice.locator.data" Class="MasonryLocatorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=hansqldev02,2429;Initial Catalog=Stone;User ID=OC_Admin" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OwensCorning.Locator.Stone" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PD_CSDealer" Member="RawMasonryLocatorResults">
+    <Type Name="RawMasonryLocatorResult">
+      <Column Name="Company" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="ShipAddress1" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ShipCity" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ShipState" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShipZip" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="WebVisible" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="ProDesk_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Member_Type_Code" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DataUploadDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Showroom" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Member_Level" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ProStone" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Enrolled" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Product_Lead_Type_Code" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Product_Lead_Type_Description" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="RegionId" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SalesRepID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SalesRepFirstName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SalesRepLastName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SalesRepEmailID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SalesRepUserName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RfgZips" Member="RawMasonryLocations">
+    <Type Name="RawMasonryLocation">
+      <Column Name="Zip" Member="PostalCode" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DistCodeListID" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TradeArea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TradeCodeListID" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="St" Member="State" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="County" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Lat" Member="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Long" Member="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

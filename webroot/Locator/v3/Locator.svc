@@ -1,0 +1,1 @@
+<%@ ServiceHost Language="C#" Debug="true" Service="com.ocwebservice.LocatorV3" CodeBehind="Locator.svc.cs" %>

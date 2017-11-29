@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MasonryLocator">
+  <DataContextMoniker Name="/MasonryLocatorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="00c6391b-ac3a-4cbd-b959-51eefe4adae5" absoluteBounds="0.5, 0.5, 3.625, 5.6169254557291657">
+      <DataClassMoniker Name="/MasonryLocatorDataContext/RawMasonryLocatorResult" />
+      <nestedChildShapes>
+        <elementListCompartment Id="805375a5-243c-43ec-9bd0-7d68f2081198" absoluteBounds="0.515, 0.96, 3.5949999999999998, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64bb63b6-ed15-452b-8331-d696b9d66fd6" absoluteBounds="4.5, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/MasonryLocatorDataContext/RawMasonryLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f5dbffd-67e5-4722-af12-e8f65583ff14" absoluteBounds="4.515, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

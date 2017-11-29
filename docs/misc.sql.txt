@@ -1,0 +1,20 @@
+SELECT
+		'<contactform><id>' + CAST(pk_id AS VARCHAR) 
+		+ '</id><date_created>' + CAST(date_created AS VARCHAR)
+		+ '</date_created><business_area>' + business_area
+		+ '</business_area><source_form_name>' + source_form_name
+		+ '</source_form_name><source_form_path>' + source_form_path
+		+ '</source_form_path><external_key>' + external_key
+		+ '</external_key><external_date>' + CAST(external_date AS VARCHAR)
+		+ '</external_date><contact_type>' + contact_type
+		+ '</contact_type><contact_fullname>' + contact_fullname
+		+ '</contact_fullname><contact_email>' + contact_email
+		+ '</contact_email><contact_phone>' + contact_phone
+		+ '</contact_phone><company_name>' + company_name
+		+ '</company_name><language>' + language
+		+ '</language>' +  other_data
+		+ '</contactform>'
+  FROM oc_contactlist
+
+-- SELECT * FROM oc_contactlist
+-- '<contactform><id>' + CAST(pk_id AS VARCHAR) + '</id><date_created>' + CAST(date_created AS VARCHAR) + '</date_created><business_area>' + business_area + '</business_area><source_form_name>' + source_form_name + '</source_form_name><source_form_path>' + source_form_path + '</source_form_path><external_key>' + external_key + '</external_key><external_date>' + CAST(external_date AS VARCHAR) + '</external_date><contact_type>' + contact_type + '</contact_type><contact_fullname>' + contact_fullname + '</contact_fullname><contact_email>' + contact_email + '</contact_email><contact_phone>' + contact_phone + '</contact_phone><company_name>' + company_name + '</company_name><language>' + language + '</language>' +  other_data + '</contactform>' 

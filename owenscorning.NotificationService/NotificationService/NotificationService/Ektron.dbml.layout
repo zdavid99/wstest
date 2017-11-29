@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17, 9" name="Ektron">
+  <DataContextMoniker Name="/EktronDataContext" />
+  <nestedChildShapes>
+    <classShape Id="02372f68-26a4-4d3d-afbf-9258e608a81a" absoluteBounds="14.75, 0.875, 2, 4.2708154296875">
+      <DataClassMoniker Name="/EktronDataContext/metadata_type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="42d6a76b-5708-4ab6-ba5a-592f90f6ad19" absoluteBounds="14.765, 1.335, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d8eb809-120b-461e-930f-f4c2d8c9459e" absoluteBounds="11.375, 2.25, 2, 4.8477197265625">
+      <DataClassMoniker Name="/EktronDataContext/Taxonomy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="764e2b9f-32b7-4fc4-b21c-643fd11b2867" absoluteBounds="11.39, 2.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2374f21-dfd8-4613-93ce-57fbbe77d8d8" absoluteBounds="8, 3.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/EktronDataContext/TaxonomyItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9205f63-f716-4a66-91b6-5c69b9e3281e" absoluteBounds="8.015, 4.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="262a002c-8173-4dde-a13d-6930c13b1ffa" absoluteBounds="5.125, 0.625, 2, 8.1168440755208326">
+      <DataClassMoniker Name="/EktronDataContext/EKContent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76a6487c-a04d-4243-91da-3db29538d61a" absoluteBounds="5.14, 1.085, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4a4866f-48ad-43ba-8ac9-e755b03a932b" absoluteBounds="2.25, 1.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/EktronDataContext/Document" />
+      <nestedChildShapes>
+        <elementListCompartment Id="feb96fbe-1b7a-4c1a-9d35-f9529cf8e1ea" absoluteBounds="2.265, 2.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b422312-9063-4e63-becb-1befca904b79" absoluteBounds="8.625, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/EktronDataContext/content_meta_tbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b2a3d47-21b6-47ed-b015-ba620612a0d7" absoluteBounds="8.64, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.75 : 1.53125); (10.625 : 1.53125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EktronDataContext/metadata_type/metadata_type_content_meta_tbl" />
+      <nodes>
+        <classShapeMoniker Id="02372f68-26a4-4d3d-afbf-9258e608a81a" />
+        <classShapeMoniker Id="1b422312-9063-4e63-becb-1befca904b79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.375 : 4.89505126953125); (10 : 4.89505126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/EktronDataContext/Taxonomy/Taxonomy_TaxonomyItem" />
+      <nodes>
+        <classShapeMoniker Id="9d8eb809-120b-461e-930f-f4c2d8c9459e" />
+        <classShapeMoniker Id="d2374f21-dfd8-4613-93ce-57fbbe77d8d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 3.69310628255208); (5.125 : 3.69310628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EktronDataContext/Document/Document_EKContent" />
+      <nodes>
+        <classShapeMoniker Id="d4a4866f-48ad-43ba-8ac9-e755b03a932b" />
+        <classShapeMoniker Id="262a002c-8173-4dde-a13d-6930c13b1ffa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 4.89505126953125); (7.125 : 4.89505126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EktronDataContext/TaxonomyItem/TaxonomyItem_EKContent" />
+      <nodes>
+        <classShapeMoniker Id="d2374f21-dfd8-4613-93ce-57fbbe77d8d8" />
+        <classShapeMoniker Id="262a002c-8173-4dde-a13d-6930c13b1ffa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 1.63544840494792); (8.625 : 1.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EktronDataContext/EKContent/EKContent_content_meta_tbl" />
+      <nodes>
+        <classShapeMoniker Id="262a002c-8173-4dde-a13d-6930c13b1ffa" />
+        <classShapeMoniker Id="1b422312-9063-4e63-becb-1befca904b79" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

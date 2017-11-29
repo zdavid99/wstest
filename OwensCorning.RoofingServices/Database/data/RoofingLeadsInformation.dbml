@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="OCroofingDEV" Class="RoofingLeadsInformationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=whqv7504;Initial Catalog=OCroofingDEV;User ID=ocroofing_dbo" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OCroofingDEVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.RfgRequestQuote" Member="RfgRequestQuotes">
+    <Type Name="RfgRequestQuote">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="forwardedTo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="forwardedToIds" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="besttimetocall" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetRoofingLeads" Method="GetRoofingLeads">
+    <Parameter Name="memberID" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="GetRoofingLeadsResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="forwardedTo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="forwardedToIds" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="besttimetocall" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

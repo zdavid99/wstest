@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="OC_NotificationService" Class="NotificationTablesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=hansqldev02,2429;Initial Catalog=OC_NotificationService;Persist Security Info=True;User ID=OC_Admin" SettingsObjectName="OwensCorning.NotificationService.Properties.Settings" SettingsPropertyName="OC_NotificationServiceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SentInfo" Member="SentInfos">
+    <Type Name="SentInfo">
+      <Column Name="batchId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="subscriptionEmail" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="site" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lastSendDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Subscription_SentInfo" Member="Subscription" ThisKey="subscriptionEmail,site" Type="Subscription" IsForeignKey="true" />
+      <Association Name="Batch_SentInfo" Member="Batch" ThisKey="batchId" Type="Batch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subscription" Member="Subscriptions">
+    <Type Name="Subscription">
+      <Column Name="email" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="site" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="optedIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Subscription_SentInfo" Member="SentInfos" OtherKey="subscriptionEmail,site" Type="SentInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UpdatedDocuments" Member="UpdatedDocuments">
+    <Type Name="UpdatedDocument">
+      <Column Name="pk_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="documentName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="url" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dateUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fileSize" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="documentType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="batch" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Batch_UpdatedDocument" Member="Batch1" ThisKey="batch" Type="Batch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Batch" Member="Batches">
+    <Type Name="Batch">
+      <Column Name="batchId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="site" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="startDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="endDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="finishDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Batch_SentInfo" Member="SentInfos" OtherKey="batchId" Type="SentInfo" />
+      <Association Name="Batch_UpdatedDocument" Member="UpdatedDocuments" OtherKey="batch" Type="UpdatedDocument" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiteConfiguration" Member="SiteConfigurations">
+    <Type Name="SiteConfiguration">
+      <Column Name="site" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="siteName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="emailTemplateURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="taxonomyName" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

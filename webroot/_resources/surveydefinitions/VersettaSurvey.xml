@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <survey name="Versetta Stone Survey">
+    <Question num="1" text="I am..." footnote="(check the ONE box that most closely describes you)" required="true">
+      <Option type="radio" id="Question1_Audience">
+        <Option text="A Homeowner" value="homeowner" />
+        <Option text="A Siding Installer" value="siding-installer" />
+        <Option text="A Mason" value="mason" />
+        <Option text="A Builder/General Contractor" value="builder" />
+        <Option text="An Architect" value="architect" />
+        <Option type="other" text="Other" value="audience-other"></Option>
+      </Option>
+    </Question>
+    <Question num="2" text="My project is..." required="true">
+      <Option type="radio" id="Question2_Project">
+        <Option text="Residential" value="residential" />
+        <Option text="Commercial" value="commercial" />
+      </Option>
+    </Question>
+    <Question num="3" text="The work to be performed is..." required="true">
+      <Option type="radio" id="Question3_WorkType">
+        <Option text="A Remodel" value="remodel" />
+        <Option text="New Construction" value="new" />
+        <Option type="other" text="Other" value="worktype-other" />
+      </Option>
+    </Question>
+    <Question num="4" text="Versetta Stone&amp;trade; panelized stone veneer will be used for ___________ application. " required="true">
+      <Option type="radio" id="Question4_InteriorExterior">
+        <Option text="Interior" value="interior" />
+        <Option text="Exterior" value="exterior" />
+      </Option>
+    </Question>
+    <Question num="5" text="First Name: " required="false">
+      <Option type="name" id="Question5_FirstName" fieldname="First Name" required="false" />
+    </Question>
+    <Question num="6" text="Last Name: " required="false">
+      <Option type="name" id="Question6_LastName" fieldname="Last Name" required="false" />
+    </Question>
+    <Question num="7" text="Phone Number: " required="false">
+      <Option type="phone" fieldname="Phone Number" id="Question7_Phone" required="false" />
+    </Question>
+    <Question num="8" text="Email: " required="false">
+      <Option type="email" fieldname="Email" id="Question8_Email" />
+    </Question>
+    <Question num="9" text="Zip Code: " required="false">
+      <Option type="zip" fieldname="Zip Code" id="Question9_Zip" />
+    </Question>
+    <Question num="10" required="false">
+      <Option type="optin" text="I would like to subscribe to Owens Cornings mailings and receive announcements, special offers, and promotions." id="Question10_OptIn" />
+    </Question>
+  </survey>
+</root>

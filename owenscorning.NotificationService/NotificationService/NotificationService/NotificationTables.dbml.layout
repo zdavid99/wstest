@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="NotificationTables">
+  <DataContextMoniker Name="/NotificationTablesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dd2828a4-0603-4c06-9586-2439f3f72a58" absoluteBounds="3.5, 2.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/NotificationTablesDataContext/SentInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="470060fa-cf02-4725-b5bc-59bd60d38348" absoluteBounds="3.515, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1fc8339-8fec-4a62-a03c-57da495cb245" absoluteBounds="0.75, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/NotificationTablesDataContext/Subscription" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b84c27b2-de5d-495c-8814-e28020bae2bb" absoluteBounds="0.76500000000000012, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.63544840494792); (4.5 : 1.63544840494792); (4.5 : 2.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NotificationTablesDataContext/Subscription/Subscription_SentInfo" />
+      <nodes>
+        <classShapeMoniker Id="c1fc8339-8fec-4a62-a03c-57da495cb245" />
+        <classShapeMoniker Id="dd2828a4-0603-4c06-9586-2439f3f72a58" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a335ce9d-72dc-4e1b-8814-c6ad44d98ad8" absoluteBounds="3.5, 6.125, 2, 2.1554996744791675">
+      <DataClassMoniker Name="/NotificationTablesDataContext/UpdatedDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2761ae8-462a-4aaf-abc0-b9dfc53a1d7d" absoluteBounds="3.5150000005960464, 6.58500000089407, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="14cfd1cd-0dfa-41bd-8556-22726b1465e1" absoluteBounds="1.125, 4.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/NotificationTablesDataContext/Batch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e08bbeb4-5099-47c1-a8d2-f72d83a18672" absoluteBounds="1.1400000000000001, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.125 : 4.25); (2.125 : 3.4999995); (3.5 : 3.4999995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NotificationTablesDataContext/Batch/Batch_SentInfo" />
+      <nodes>
+        <classShapeMoniker Id="14cfd1cd-0dfa-41bd-8556-22726b1465e1" />
+        <classShapeMoniker Id="dd2828a4-0603-4c06-9586-2439f3f72a58" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 6.2131982421875); (2.125 : 7.20274983723958); (3.5 : 7.20274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/NotificationTablesDataContext/Batch/Batch_UpdatedDocument" />
+      <nodes>
+        <classShapeMoniker Id="14cfd1cd-0dfa-41bd-8556-22726b1465e1" />
+        <classShapeMoniker Id="a335ce9d-72dc-4e1b-8814-c6ad44d98ad8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c1b274fc-175e-492b-84c6-059a1783d6a3" absoluteBounds="8.625, 1.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/NotificationTablesDataContext/SiteConfiguration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ec344e2-bbeb-4e36-91f3-df5b6cd856ef" absoluteBounds="8.64, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

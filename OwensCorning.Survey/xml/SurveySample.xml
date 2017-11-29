@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <survey name="Foam Survey">
+    <Question num="1" text="I am..." footnote="(check the ONE box that most closely describes you)" required="true">
+      <Option type="radio" id="Question1-Profession">
+        <Option text="An Architect / Work for an Architectural Firm" value="architect" checked="true" />
+        <Option text="A Builder" value="builder" />
+        <Option text="A Contractor" value="contractor" />
+        <Option text="Other" value="other" />
+      </Option>
+    </Question>
+    <Question num="2" text="The reason for my visit today is ..." footnote="(check all that apply)" required="true">
+      <Option type="check" id="Question2-Products" text="Researching Products">
+        <Option type="check" id="250" text="Foamular® 250 Rigid Foam Insulation">
+          <Option type="check" id="ThreeDeep" text="Three Deep!" />
+          <Option type="check" id="AnotherOption" text="AnotherOption" />
+          <Option type="check" id="Finally" text="Finally" />
+        </Option>
+        <Option type="check" id="150" text="Foamular® 150 Rigid Foam Insulation" />
+        <Option type="check" id="Thermapink" text="Foamular® THERMAPINK®" />
+        <Option type="check" id="Insulating" text="Foamular® Insulating Sheathing" />
+        <Option type="check" id="400" text="Foamular® 400 High Compressive Strength Rigid Foam Insulation" />
+        <Option type="check" id="1000" text="Foamular® 1000 High Compressive Strength Rigid Foam Insulation" />
+        <Option type="check" id="Fanfold" text="Foamular® Fanfold DWB" />
+        <Option type="check" id="600" text="Foamular® 600 High Compressive Strength Rigid Foam Insulation" />
+        <Option type="check" id="Pinkcore" text="PINKCORE®" />
+        <Option type="check" id="InsulDrain" text="Foamular® INSUL-DRAIN® Extruded Polystyrene Insulation" />
+        <Option type="checkother" id="Other" text="Other" />
+      </Option>
+      <Option type="check" id="Question2-Applications" text="Researching Applications">
+        <Option type="check" id="Walls" text="Walls" />
+        <Option type="check" id="BelowGrade" text="Below grade" />
+        <Option type="check" id="Accessories" text="Accessories" />
+      </Option>
+      <Option type="check" id="Question2-ComparingCompetitive" text="Comparing Competitive Products" />
+      <Option type="check" id="Question2-NeedTechnicalDocuments" text="Need Technical Documents" />
+      <Option type="checkother" id="2-Other" text="Other" />
+    </Question>
+    <Question num="3" text="My project is..." footnote="(check ONE box only)" required="true">
+      <Option type="radio" id="Question3-Project">
+        <Option text="A Commercial Building" value="commercial" checked="true" />
+        <Option text="A Residential Site/Development" value="residential" />
+      </Option>
+    </Question>
+    <Question num="4" text="First Name: " required="true">
+      <Option type="name" id="Question4-FirstName" fieldname="First Name" required="true" />
+    </Question>
+    <Question num="5" text="Last Name: " required="true">
+      <Option type="name" id="Question5-LastName" fieldname="Last Name" required="true" />
+    </Question>
+    <Question num="6" text="Company: " required="true">
+      <Option type="company" fieldname="Company" id="Question6-Company" />
+    </Question>
+    <Question num="7" text="Email: " required="true">
+      <Option type="email" fieldname="Email" id="Question7-Email" />
+    </Question>
+    <Question num="8" text="Phone Number: " required="true">
+      <Option type="phone" fieldname="Phone Number" id="Question8-Phone" required="true" />
+    </Question>
+    <Question num="9" text="Address: " required="true">
+      <Option type="address" fieldname="Address" id="Question9-Address" />
+    </Question>
+    <Question num="10" text="City: " required="true">
+      <Option type="city" fieldname="City" id="Question10-City" />
+    </Question>
+    <Question num="11" text="State: " required="true">
+      <Option type="states" fieldname="State" id="Question11-State" />
+    </Question>
+    <Question num="12" text="Zip Code: " required="true">
+      <Option type="zip" fieldname="Zip Code" id="Question12-Zip" />
+    </Question>
+    <Question num="13" text="Website: " required="true">
+      <Option type="website" fieldname="Website" id="Question13-Website" />
+    </Question>
+    <Question num="14" required="false">
+      <Option type="optin" id="Question14-OptIn" />
+    </Question>
+  </survey>
+</root>

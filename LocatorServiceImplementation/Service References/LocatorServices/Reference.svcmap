@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53a33394-179d-400e-b650-c46c9c80b374" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59579/Locator.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Locator.xsd" MetadataType="Schema" ID="23eca7c7-1f8c-4bac-b642-c9d4a34f87ff" SourceId="1" SourceUrl="http://localhost:59579/Locator.svc?xsd=xsd0" />
+    <MetadataFile FileName="Locator.disco" MetadataType="Disco" ID="58039ffd-9375-4ffb-babb-a7e6591b55d1" SourceId="1" SourceUrl="http://localhost:59579/Locator.svc?disco" />
+    <MetadataFile FileName="Locator1.xsd" MetadataType="Schema" ID="1e054fc1-e787-4d85-b88e-63593c19c8c6" SourceId="1" SourceUrl="http://localhost:59579/Locator.svc?xsd=xsd3" />
+    <MetadataFile FileName="Locator2.xsd" MetadataType="Schema" ID="8449fd58-5632-43b3-8a6a-18c1c96d3c1a" SourceId="1" SourceUrl="http://localhost:59579/Locator.svc?xsd=xsd1" />
+    <MetadataFile FileName="Locator3.xsd" MetadataType="Schema" ID="d90dbc48-868f-4a13-8fd9-483dc71ab11f" SourceId="1" SourceUrl="http://localhost:59579/Locator.svc?xsd=xsd2" />
+    <MetadataFile FileName="Locator.wsdl" MetadataType="Wsdl" ID="4603dba8-f1f8-4818-9fa1-bb802ecd3807" SourceId="1" SourceUrl="http://localhost:59579/Locator.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <survey name="TheSurvey">
+    <Option id="firstName" fieldname="First Name" type="name" text="First Name: " required="true" />
+    <option id="state" fieldname="State" type="state" text="State:" />
+
+    <Option type="check" id="ResearchingProducts" text="Researching Products">
+      <Option type="check" id="250" text="Foamular® 250 Rigid Foam Insulation" />
+      <Option type="check" id="150" text="Foamular® 150 Rigid Foam Insulation" />
+      <Option type="check" id="Thermapink" text="Foamular® THERMAPINK®" />
+      <Option type="check" id="Insulating" text="Foamular® Insulating Sheathing" />
+      <Option type="check" id="400" text="Foamular® 400 High Compressive Strength Rigid Foam Insulation" />
+      <Option type="check" id="1000" text="Foamular® 1000 High Compressive Strength Rigid Foam Insulation">
+        <option type="check" id="Test1" text="Test 1" />
+        <option type="check" id="Test2" text="Test 2" />
+        <option type="check" id="Test3" text="Test 3" />
+        <option type="check" id="Test4" text="Test 4" />
+        <option type="check" id="Test5" text="Test 5" />
+      </Option>
+      <Option type="check" id="Fanfold" text="Foamular® Fanfold DWB" />
+      <Option type="check" id="600" text="Foamular® 600 High Compressive Strength Rigid Foam Insulation" />
+      <Option type="check" id="Pinkcore" text="PINKCORE®" />
+      <Option type="check" id="InsulDrain" text="Foamular® INSUL-DRAIN® Extruded Polystyrene Insulation" />
+      <Option type="check" id="Other" text="Other" />
+    </Option>
+    
+  </survey>
+</root>

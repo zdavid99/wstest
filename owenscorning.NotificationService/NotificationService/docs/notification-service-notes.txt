@@ -1,0 +1,11 @@
+The webservice currently does not provide an interface to unsubscribe
+a user from the Document Notification Service. See below for how to 
+perform the unsubscribe manually.
+
+
+1. Connect to the OC_NotificationService database.
+2. Run the following SQL statement, using the appropriate email address ...
+
+UPDATE Subscription
+SET optedIn = 0
+WHERE email = 'email@company.com'

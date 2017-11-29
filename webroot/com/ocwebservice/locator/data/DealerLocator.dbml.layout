@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DealerLocatorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="50984f52-9a77-411d-aac6-c3a01a51b2ec" absoluteBounds="0.5, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DealerLocatorDataContext/RawCanadaBMDealer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d99885a-45f7-4050-94ea-3623446f2108" absoluteBounds="0.515, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6f71fab-ed79-475e-9ff2-8302cd4d7b11" absoluteBounds="3, 0.5, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/DealerLocatorDataContext/RawBMDealer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8dc1441f-2adb-43bb-b58e-d832e86a1c64" absoluteBounds="3.015, 0.96, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="286f9724-d954-4259-8cbc-61a436eed493" absoluteBounds="5.375, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DealerLocatorDataContext/RawBMDealerLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8153377d-a5de-493d-ab97-ad7f90afb3b5" absoluteBounds="5.39, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

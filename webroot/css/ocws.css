@@ -1,0 +1,685 @@
+/* HTML ELEMENTS */
+/* - - - - - - - - - - - - - */
+
+/* =================================== */
+/*                                     */
+/*            BASIC SITEWIDE           */
+/*                                     */
+/* =================================== */
+body {
+	background:#EEEEEE url(/images/body-bg.jpg) repeat-x 0 0;
+	margin: 0;
+	padding: 0;
+}
+
+* html body { text-align: center; } /* IE-only centering */
+
+ 
+/* - - - used px to match font format used in Navigation - - - -*/
+body, td { 
+	font: 11px/13px Verdana, "Lucida Grande", Arial, sans-serif;
+}
+
+a:link {
+	color: #FF0099;
+	text-decoration:underline;
+}
+
+a:visited, a:hover, a:active {
+	color: #333;
+	text-decoration:underline;
+}
+
+img {
+	border: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0 0 12px 0;
+}
+h1 {
+	padding: 0;
+	margin: 0 0 10px 0;
+	font-size: 1.35em;
+	line-height: 1.35em;
+}
+h2 {
+	padding: 0 0 10px 0;
+	margin: 1em 0 0 0;
+	font-size: 1.25em;
+	line-height: 1.25em;
+}
+
+h3 {
+	padding: 0 0 10px 0;
+	margin: 1em 0 0 0;
+	font-size: 1em;
+	line-height: 1em;
+}
+
+ul {
+	list-style: square;
+}
+sup {
+	font-size:.65em;
+}
+.hidden {
+	display: none;
+}
+
+.replaced {	
+	display: block;
+	text-indent: -999em;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.imageborder {
+	border:1px solid #999;
+	padding:2px;
+}
+
+.imagefloatright {
+	float:right;
+	margin:0 0 1em 1em;
+}
+.imagefloatleft {
+	float:left;
+	margin:0 1em 1em 0;
+}
+.pull-right {
+	float:right;
+}
+.pull-left {
+	float:left;
+}
+.blacksmall {
+	font-size:.8em;
+}
+
+.bulletedlist {
+	list-style:square;
+	padding:0;
+	margin:0 20px;
+}
+
+/* - - - - - Header styles - - - - -*/
+#admin-wrapper {
+	margin-left:10px;
+	padding-bottom:2em;		
+}
+#wrapper {
+	width:860px;
+	margin:0 auto;
+	text-align:left;   /*clear IE centering*/
+}
+#gradientwrapper {
+	background:#fff url(/images/gradient.jpg) repeat-x;
+	height:10px;
+	width:860px;
+}
+#headerwrapper {
+	height:85px;
+	background: url(http://commercial.staging.hansoninc.com/images/skin/header-bg-repeat.gif) repeat-x;
+	display: block;
+	padding: 0px;
+}
+#header{ 
+	margin: 0 auto;
+	padding: 0 16px;
+	width: 828px; 
+}
+#oclogo {
+	margin-top:12px;
+}
+
+#headercontentright {
+	float:right;
+	font-size:.75em;
+	padding-top: 5px
+}
+/* - - - - - - Top Nav - - - - - - */
+#navrow1container{
+	float:left; 
+}
+.navrow {
+	height: 30px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+.navrow li { float: left; padding: 0; margin: 0; display: inline; }
+
+.navrow li a {
+	display: block;
+	padding-top: 30px;
+	margin: 0;
+	background-repeat: no-repeat;
+	height: 0 !important;
+	height /* */: 30px; /* False value for IE4-5.x/Win. */ 
+}
+
+.navrow li a { height: 30px; background-position: 0 0; } 
+.navrow li a:hover { background-position: 0 -30px; }
+.navrow li.selected a { background-position: 0 -30px; }
+
+/* - - - - - - body styles - - - - - - - */
+#leftcolumnwrapper {
+	float:left;
+	width: 240px;
+}
+#rightcolumnwrapper {
+	float:left;
+	width: 620px;
+}
+#bodycontent {
+	padding: 0px 16px;
+	float:left;
+	width:828px;
+	background:#fff url(/images/skin/left-column-bg.gif) repeat-y 0 0;
+}
+
+#body-wrapper-two-column {
+	width:580px !important;
+	width /* */: 620px; /* False value for IE4-5.x/Win. */ 
+	padding:0 20px;
+	margin-top:10px;
+}
+#pink-highlights {
+	margin-top:2em;
+	background:url(/images/skin/pink-gradient.jpg) repeat-x 0 0;
+	border:1px solid #ccc;
+	width:578px !important;
+	width /* */ : 580px; /* false ie/win value */
+	padding-bottom:1em;
+}
+#standoutcolumn {
+	width:247px !important;
+	width /* */ : 288px; /* false ie/win value */
+	float:left;
+	border-left:1px solid #ccc;
+	margin-top:15px;
+	padding:0 20px;
+	font-size:.8em;
+	line-height:1.75em;
+}
+#notsurecolumn {
+	margin-top:15px;
+	width:248px !important;
+	width /* */ : 288px; /* false ie/win value */
+	float:left;
+	padding:0 20px;
+	font-size:.8em;
+	line-height:1.75em;
+}
+
+
+/* - - - - - shingles styles - - - - -*/
+#shingle-styles {
+	list-style: none;
+	margin: 0;
+	padding: 1em 0;
+	background: url("/images/shingles/comp_item_bg.gif") top left repeat-x;
+}
+#shingle-styles li {
+	padding: 1em 0 1.5em 0.75em;
+	background: url("/images/shingles/comp_item_bg.gif") bottom left repeat-x;
+	overflow: hidden;
+	zoom: 1;
+}
+
+* html #shingle-styles li { height: 1%; }
+
+.large-swatch {
+	background: #ccc;
+	float: left;
+	margin-right: 10px;
+}
+
+.large-swatch input { vertical-align: middle;  }
+.large-swatch img { vertical-align: middle; }
+
+#shingle-styles h3 { margin: 0 0 0.35em 0; padding: 0; }
+#shingle-styles h3 a {
+	color: #000;
+	font-size: 1.1em;
+}
+
+.shingle-warranty-image, .shingle-warranty-link { float: left; }
+.shingle-warranty-image { margin-right: 15px; }
+.shingle-warranty-link { width: 180px; margin-right: 20px; }
+.shingle-warranty-link h4, .shingle-warranty-link p {
+	margin: 0;
+	padding: 0;
+	font-size: 0.9em;
+}
+
+.shingle-warranty-link a { font-size: 0.9em; }
+
+#shingle-styles .shingle-specs {
+	float: left;
+	width: 200px;
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+#shingle-styles .shingle-specs li {
+	font-size: 0.8em;
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+
+#shingle-styles .shingle-specs li a { font-size: 1em; }
+
+.color-options-toggle {
+	clear: both;
+	padding: 0.25em 0 0 0;
+	margin: 0;
+}
+
+.toggle, .toggle-open {
+	padding-left: 12px;
+	background: url("/images/shingles/arrow_up.gif") 0 50% no-repeat;
+	color: #000;
+	font-size: 0.85em;
+	font-weight: bold;
+}
+
+.toggle-open { 
+	background-image: url("/images/shingles/arrow_down.gif");
+	padding-left: 14px;
+}
+
+#shingle-styles .shingleline-colors {
+	margin: 0.35em 0 0 0;
+	padding: 0; 
+}
+
+#shingle-styles .shingleline-colors li {
+
+	width:61px !important;
+	width /* */ : 67px; /* false ie/win value */
+	background: none;
+	display: block;
+	float: left;
+	padding: 1px;
+	margin-right: 2px;
+	border: 2px solid #fff;
+}
+
+#shingle-styles .shingleline-colors li.colorFamilySelected {
+	border: 2px solid #df318c;
+}
+
+#shingle-styles .shingleline-colors li img { display: block; }
+
+
+#product-swatches {
+	list-style: none;
+	margin: 0 0 1em 0;
+	padding: 0;
+	overflow: hidden;
+	zoom: 1;
+}
+
+#product-swatches li {
+	display: block;
+	float: left;
+	width: 75px;
+	margin:1em 0;
+	margin-right: 6px;
+	text-align: center;
+	min-height: 130px;
+	font-size: 0.85em;
+	line-height: 1em;
+}
+
+* html #product-swatches li { height: 130px; }
+
+#product-swatches a {
+	display: block;
+	position: relative;
+}
+
+#product-swatches img {
+	display: block;
+	position: relative;
+	padding: 1px;
+	margin-bottom: 5px;
+	border: 1px solid #999;
+}
+/* - - - - - Footer - - - - - - */
+
+#footer {
+	clear: both;
+	font-size:.8em;
+	background:#fff;
+	padding:10px 20px;
+	border-top:1px solid #f2f2f2;
+}
+
+#copyright {
+	float: left;
+}
+
+#footerlinks {
+	float:right;
+}
+
+#footer a:visited {
+	color: #FF1CAD;
+}
+.tablewithborder {
+	border:1px solid #ccc;
+	float:right;
+	width:250px;
+}
+.showrightborder {
+	border-right:1px solid #ccc;
+}
+.cellwithpinkbg {
+	background:#FCF2F6;
+}
+
+/* - - - - - Form styles - - - - - */
+/* - Zip control styling - */
+#zip-wrapper {
+	padding:0 20px;
+} 
+.leightbox {
+	top: 30%;
+	left: 40%;
+	width: 280px;
+	padding: 1em;
+}
+* html .leightbox .scrollable  { height: 150px; } 
+/* - End zip control styling - */
+
+.contactusform-div {
+	padding-bottom:1em;
+	clear:both;
+}
+label.textinputlabel {
+	display: inline;
+	float: left;
+	width: 16em;
+	margin-right: 1em;
+	clear:left;
+} 
+.required {
+	color:#ff0000;
+}
+
+.divider-bg {
+	background: url("/images/shingles/comp_item_bg.gif") top left repeat-x;
+	padding:2em 0;
+}
+#search-wrapper {
+	font-size:10px;
+	padding:5px 0 5px 20px;
+	background:#f2f2f2;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+ul#search-results {
+	list-style: none;
+	margin:1em 0 0 0;
+	padding:0;
+}
+ul#search-results li {
+	padding:10px 10px;
+	margin:0;
+	float:left;
+	width:550px !important;
+	width /* */ : 570px; /* false ie/win value */
+}
+.shaded {
+	background:#FCF0F5;
+}
+.search-inner-left {
+	float:left;
+	width:450px;
+}
+.search-inner-right {
+	float:right;
+	width:80px;
+}
+#bb-wrapper {
+	background:url(/images/skin/pink-gradient.jpg) repeat-x 0 0;
+	border:1px solid #ccc;
+	width:578px !important;
+	width /* */ : 580px; /* false ie/win value */
+	padding-bottom:1em; 
+}
+#best-bets {
+	list-style:none;
+	margin:0;
+	padding:10px;
+}
+#best-bets li {
+	width:160px !important;
+	width /* */: 180px; /* False value for IE4-5.x/Win. */ 
+	padding:0 10px;
+	float:left;
+}
+#searchresults-wrapper {
+	background:#fff; /*ie quirck*/
+}
+#counter-wrapper {
+	text-align:center;
+	padding:10px;
+	background:#f2f2f2;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #ccc;
+}
+/* - - - - - - - Pop up base styles - - - - - - - */
+.list {	 
+}
+
+.list a:link {
+	color: #FF0099;
+	text-decoration: none;
+}
+.list a:visited {
+	text-decoration: none;
+	color: #999;
+}
+.list a:hover {
+	text-decoration: underline;
+	color: #FF0099;
+}
+.list a:active {
+	text-decoration: none;
+	color: #FF0099;
+}
+
+#contentTop li{
+	list-style:square;
+	margin-left:10px;
+}
+
+#popupContent h3 {
+	margin:10px;
+	color:#000;
+}
+
+.popupContent h4{
+}
+
+.popupContent li{
+	margin:0;
+	padding:0;
+	margin-left:13px;
+}
+
+#popupContent p{
+	margin: 0 8px; 
+}
+
+#popupContent ul{
+	margin:0;
+	padding:0;
+	margin-left:25px;
+}
+
+#popupContent li{
+	list-style:square;
+	margin:0;
+	padding:0;
+
+}
+
+#contentTop {
+	background-repeat:no-repeat;
+	*height:300px;
+	min-height:300px;
+	padding-bottom:50px;
+	width:586px;
+	position:relative; 
+	top:-9px;
+	*top:-2px;
+}
+
+#popupContent {
+	position:absolute; 
+	overflow:hidden;
+	display:none;
+	z-index:999; 
+	width:245px;
+	/*min-height:120px;*/
+	padding-bottom:5px;
+	border:2px solid #FF0099;
+	background-color:#FCF0F5;
+}
+
+/* - - - - - - - Tabbed Navigation - - - - - */
+#tabtop {
+	background:url(/images/skin/tab-nav-top-bg.gif) no-repeat top left;
+}
+#tabbed-nav-wrapper {
+	float:left;
+	margin-top:2em;
+	width:580px;
+}
+#tabcontent-wrapper {
+	background:url(/images/skin/tab-nav-bg.jpg) no-repeat left bottom;
+}
+
+.tab-navigation {
+	height: 30px;
+	padding: 0;
+	margin: 0 0 0 20px;
+	list-style: none;
+	overflow: hidden;
+}
+
+.tab-navigation li { 
+	float: left; 
+	padding: 0; 
+	margin: 0; 
+	display: inline; 
+}
+.tab-navigation li a {
+	display: block;
+	padding-top: 30px;
+	margin: 0;
+	background-repeat: no-repeat;
+	height: 0 !important;
+	height /* */: 30px; /* False value for IE4-5.x/Win. */ 
+}
+
+.tab-navigation li a { height: 30px; background-position: 0 0; } 
+.tab-navigation li a:hover { background-position: 0 -60px; }
+.tab-navigation li.selected a { background-position: 0 -30px;}
+
+#tabbeditem1, #tabbeditem2, #tabbeditem3 {
+	text-align:left;
+	width:540px  !important;
+	width /* */: 580px; /* False value for IE4-5.x/Win. */ 
+	padding:10px 20px 0 20px;
+}
+.tabbeditemleftcolumn {
+	float:left;
+	width:250px !important;
+	width /* */: 260px; /* False value for IE4-5.x/Win. */ 
+	padding-right:10px;
+}
+.tabbeditemrightcolumn {
+	float:left;
+	width:250px !important;
+	width /* */: 260px; /* False value for IE4-5.x/Win. */ 
+	padding-left:10px;
+} 
+
+#tab-productdetails, #tab-productdetails a {
+	background-image: url(/images/nav/tab-product-details.gif); 
+	width: 157px; 
+}
+#tab-availablecolors, #tab-availablecolors a {
+	background-image: url(/images/nav/tab-available-colors.gif); 
+	width: 159px; 
+}
+#tab-technicaldetails, #tab-technicaldetails a {
+	background-image: url(/images/nav/tab-technical-details.gif); 
+	width: 157px; 
+}
+#tab-shingleroof, #tab-shingleroof a {
+	background-image: url(/images/nav/tab-shingleroof.gif); 
+	width: 157px; 
+}
+#tab-shakeroof, #tab-shakeroof a {
+	background-image: url(/images/nav/tab-shakeroof.gif); 
+	width: 157px; 
+}
+#tab-3tab, #tab-3tab a {
+	background-image: url(/images/nav/tab-3tab.gif); 
+	width: 157px; 
+}
+#tab-laminate, #tab-laminate a {
+	background-image: url(/images/nav/tab-laminate.gif); 
+	width: 157px; 
+}
+#tab-pp-coverage, #tab-pp-coverage a {
+	background-image: url(/images/nav/tab-pp-coverage.gif); 
+	width: 173px; 
+}
+#tab-pc-coverage, #tab-pc-coverage a {
+	background-image: url(/images/nav/tab-pc-coverage.gif); 
+	width: 189px; 
+}
+#tab-standard-coverage, #tab-standard-coverage a {
+	background-image: url(/images/nav/tab-standard-coverage.gif); 
+	width: 177px; 
+}
+#tab-style, #tab-style a {
+	background-image: url(/images/nav/tab-style.gif); 
+	width: 157px; 
+}
+#tab-color, #tab-color a {
+	background-image: url(/images/nav/tab-color.gif); 
+	width: 159px; 
+}
+#tab-durability, #tab-durability a {
+	background-image: url(/images/nav/tab-durability.gif); 
+	width: 157px; 
+}
+.listdisplaygroup {
+	display: none;
+}
+#documentation-list {
+	margin:0;
+	padding:0;
+}
+#documentation-list li {
+	margin:0;
+	padding:10px 10px 10px 30px;
+	list-style:none;
+	background: url(/images/graphics/pdf-icon.jpg) no-repeat 0 5px;
+}

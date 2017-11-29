@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="admin" Codebehind="admin.master.cs" %>
+<%@ Register Src="AdminMenu.ascx" TagName="AdminMenu" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+	<title></title>
+	<meta http-equiv="content-Language" content="en-us" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-Language" content="en-us" />
+	<meta name="ROBOTS" content="nofollow" />
+	<meta name="TITLE" content="Owens Corning Web Services" />
+	<meta name="OWNER" content="answers@answers.owenscorning.com" />
+	<meta name="AUTHOR" content="" />
+	<meta http-equiv="VW96.OBJECT TYPE" content="Document" />
+	<meta name="RATING" content="General" />
+	<link rel="stylesheet" type="text/css" media="all" href="/css/ocws.css" />
+	<asp:ContentPlaceHolder id="ExtraCSS" runat="server" />
+	<link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />
+	<script type="text/javascript" language="JavaScript">
+		<!--
+			function onLoadJS() {
+				<asp:ContentPlaceHolder id="OnLoadJS" runat="server" />
+			}
+			<asp:ContentPlaceHolder id="ExtraJS" runat="server" />
+		//-->
+	</script>
+	
+</head>
+<body onload="onLoadJS();">
+	
+<form id="Form1" action="" runat="server" style="padding:0; margin:0;">
+<div id="headerwrapper">
+	<div id="header">
+        <div id="headercontentright">
+	        <a href="http://www.owenscorning.com/">Visit owenscorning.com</a>
+	        &nbsp;&nbsp;&nbsp;&nbsp;
+	        <p style="padding:0;margin:0;text-align:right;"></p>
+        </div>
+        <a href="http://www.owenscorning.com"><img src="/images/logo.jpg" id="oclogo" alt="OC Logo" /></a>			
+        <div style="clear:both;"></div>	
+	</div>
+</div> 
+<div id="wrapper">
+	<div id="navrow1container">
+		<ul class="navrow"> 
+            <li id="nav-contactxus" >&nbsp;</li>
+		</ul>
+	</div>
+	<div style="clear:both;"></div>
+	<div id="gradientwrapper"></div>
+
+	<div id="bodycontent">
+        <uc1:AdminMenu ID="AdminMenu1" runat="server" />
+        <br />
+		<asp:ContentPlaceHolder id="ContentMain" runat="server" />
+	<div style="clear: both;"></div>
+</div>	
+	<div id="footer">			
+		<div id="copyright">Owens Corning. All rights reserved</div>		 
+		<div id="footerlinks">
+			<asp:HyperLink ID="hlCopyright" CssClass="footer_greylink" NavigateUrl="http://www.owenscorning.com/copyright.html" ResourceType="CopyrightClick" Target="_blank" runat="server">&copy;<asp:Literal ID="lCopyrightDate" runat="server" /> Owens Corning</asp:HyperLink>. 
+			<asp:HyperLink ID="hlPrivacy" CssClass="footer_greylink" NavigateUrl="http://www.owenscorning.com/privacypolicy.asp" ResourceType="PrivacyPolicyClick" Target="_blank" runat="server">Privacy Policy</asp:HyperLink>
+		</div>
+		<div style="clear:both;"></div>			
+	</div>
+
+	<asp:ContentPlaceHolder id="ExtraFooterContent" runat="server" />
+
+	<asp:ContentPlaceHolder id="ContentLayover" runat="server" />
+</div>
+
+<div style="padding:5em;">&nbsp;</div>
+</form>
+
+</body>
+</html>
+
+ 
+

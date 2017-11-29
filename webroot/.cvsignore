@@ -1,0 +1,12 @@
+bin
+obj
+*.suo
+PrecompiledWeb
+Bin
+*.csproj.user
+*.user
+applogs
+_UpgradeReport_Files
+UpgradeLog.XML
+webservices.owenscorning.com.Publish.xml
+*resharper*

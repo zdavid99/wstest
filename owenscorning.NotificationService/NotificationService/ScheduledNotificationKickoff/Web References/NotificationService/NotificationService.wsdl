@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.owenscorning.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://ws.owenscorning.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.owenscorning.com/">
+      <s:element name="Process">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="processingOptions" type="tns:DocumentProcessOptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentProcessOptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Site" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxonomyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileTypes" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProcessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessResult" type="tns:DocumentProcessResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentProcessResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DocumentsInBatch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocumentsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="batchId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentsListResult" type="tns:BatchedDocumentResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchedDocumentResults">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BatchId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocumentList" type="tns:ArrayOfUpdatedDoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUpdatedDoc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UpdatedDoc" nillable="true" type="tns:UpdatedDoc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UpdatedDoc">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="batch" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dateUpdated" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="documentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="documentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fileSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="url" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubscribeWithName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeWithNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubscribeWithNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Subscribe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubscribeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Unsubscribe">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="site" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnsubscribeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnsubscribeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcessSoapIn">
+    <wsdl:part name="parameters" element="tns:Process" />
+  </wsdl:message>
+  <wsdl:message name="ProcessSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentsList" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeWithNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribeWithName" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeWithNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeWithNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeSoapIn">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeSoapIn">
+    <wsdl:part name="parameters" element="tns:Unsubscribe" />
+  </wsdl:message>
+  <wsdl:message name="UnsubscribeSoapOut">
+    <wsdl:part name="parameters" element="tns:UnsubscribeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NotificationServiceSoap">
+    <wsdl:operation name="Process">
+      <wsdl:input message="tns:ProcessSoapIn" />
+      <wsdl:output message="tns:ProcessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <wsdl:input message="tns:GetDocumentsListSoapIn" />
+      <wsdl:output message="tns:GetDocumentsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeWithName">
+      <wsdl:input message="tns:SubscribeWithNameSoapIn" />
+      <wsdl:output message="tns:SubscribeWithNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <wsdl:input message="tns:SubscribeSoapIn" />
+      <wsdl:output message="tns:SubscribeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input message="tns:UnsubscribeSoapIn" />
+      <wsdl:output message="tns:UnsubscribeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotificationServiceSoap" type="tns:NotificationServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Process">
+      <soap:operation soapAction="http://ws.owenscorning.com/Process" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <soap:operation soapAction="http://ws.owenscorning.com/GetDocumentsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeWithName">
+      <soap:operation soapAction="http://ws.owenscorning.com/SubscribeWithName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap:operation soapAction="http://ws.owenscorning.com/Subscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap:operation soapAction="http://ws.owenscorning.com/Unsubscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NotificationServiceSoap12" type="tns:NotificationServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Process">
+      <soap12:operation soapAction="http://ws.owenscorning.com/Process" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <soap12:operation soapAction="http://ws.owenscorning.com/GetDocumentsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeWithName">
+      <soap12:operation soapAction="http://ws.owenscorning.com/SubscribeWithName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribe">
+      <soap12:operation soapAction="http://ws.owenscorning.com/Subscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap12:operation soapAction="http://ws.owenscorning.com/Unsubscribe" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotificationService">
+    <wsdl:port name="NotificationServiceSoap" binding="tns:NotificationServiceSoap">
+      <soap:address location="http://ws.staging.hansoninc.com/NotificationService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NotificationServiceSoap12" binding="tns:NotificationServiceSoap12">
+      <soap12:address location="http://ws.staging.hansoninc.com/NotificationService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

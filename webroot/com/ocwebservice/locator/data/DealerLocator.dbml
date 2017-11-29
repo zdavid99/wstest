@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="OWC_DealerLocator" EntityNamespace="com.ocwebservice.locator.model" ContextNamespace="com.ocwebservice.locator.data" Class="DealerLocatorDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=hansqldev01.hansoninc.local,2429;Initial Catalog=OWC_DealerLocator;User ID=han_sa;MultipleActiveResultSets=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OwensCorning.Locator.DealerLocator" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CanadaDealersInfo" Member="RawCanadaBMDealers">
+    <Type Name="RawCanadaBMDealer">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="company" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="postal_code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ts" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_DealerInfo_Chain" Member="RawBMDealers">
+    <Type Name="RawBMDealer">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(10,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RecordID" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="StoreName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StocksFiberGlassInsulation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StocksFoamInsulation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StocksVinylSiding" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StocksRoofing" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StocksHousewrap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StocksAttiCat" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WebSiteAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SellsToDIY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SellsToContractors" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SourceDB" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RecordOwner" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RecordOwnerEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateUpdated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateUploaded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChainName" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RfgZips" Member="RawBMDealerLocations">
+    <Type Name="RawBMDealerLocation">
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DistCodeListID" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TradeArea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TradeCodeListID" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="St" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Long" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ts" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+</Database>

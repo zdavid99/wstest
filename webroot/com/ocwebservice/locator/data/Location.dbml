@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="OCCommon" EntityNamespace="com.ocwebservice.locator.model" ContextNamespace="com.ocwebservice.locator.data" Class="LocationDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=hansqldev02,2429;Initial Catalog=OCCommon;User ID=OC_Admin;Password=10ac!ou3" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OwensCorning.Common" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ZipPostalCodes" Member="Locations">
+    <Type Name="Location">
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="PostalType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CityName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="CityType" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CountyName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="CountyFIPS" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="ProvinceName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ProvinceAbbr" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="StateFIPS" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="MSACode" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="AreaCode" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="TimeZone" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="UTC" Type="System.Decimal" DbType="Decimal(3,1)" CanBeNull="true" />
+      <Column Name="DST" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(9,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="Locator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59579/Locator.svc?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59579/Locator.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:59579/Locator.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/OwensCorning.Locator.Data" />
+      <xsd:import schemaLocation="http://localhost:59579/Locator.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILocator_GetLocatorResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocatorResults" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetLocatorResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocatorResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetContractorWithForeignId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractorWithForeignId" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetContractorWithForeignId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractorWithForeignIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetContractorWithEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractorWithEmail" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetContractorWithEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractorWithEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetContractors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractors" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetContractors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContractorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetRoofingDealers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoofingDealers" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetRoofingDealers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoofingDealersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetRoofingInstallers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoofingInstallers" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetRoofingInstallers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoofingInstallersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetBuilders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuilders" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetBuilders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetMasonryDealers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasonryDealers" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetMasonryDealers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasonryDealersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetMasonryInstallers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasonryInstallers" />
+  </wsdl:message>
+  <wsdl:message name="ILocator_GetMasonryInstallers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasonryInstallersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILocator">
+    <wsdl:operation name="GetLocatorResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetLocatorResults" message="tns:ILocator_GetLocatorResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetLocatorResultsResponse" message="tns:ILocator_GetLocatorResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractorWithForeignId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetContractorWithForeignId" message="tns:ILocator_GetContractorWithForeignId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetContractorWithForeignIdResponse" message="tns:ILocator_GetContractorWithForeignId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractorWithEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetContractorWithEmail" message="tns:ILocator_GetContractorWithEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetContractorWithEmailResponse" message="tns:ILocator_GetContractorWithEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContractors">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetContractors" message="tns:ILocator_GetContractors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetContractorsResponse" message="tns:ILocator_GetContractors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoofingDealers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetRoofingDealers" message="tns:ILocator_GetRoofingDealers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetRoofingDealersResponse" message="tns:ILocator_GetRoofingDealers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoofingInstallers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetRoofingInstallers" message="tns:ILocator_GetRoofingInstallers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetRoofingInstallersResponse" message="tns:ILocator_GetRoofingInstallers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuilders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetBuilders" message="tns:ILocator_GetBuilders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetBuildersResponse" message="tns:ILocator_GetBuilders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasonryDealers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetMasonryDealers" message="tns:ILocator_GetMasonryDealers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetMasonryDealersResponse" message="tns:ILocator_GetMasonryDealers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasonryInstallers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILocator/GetMasonryInstallers" message="tns:ILocator_GetMasonryInstallers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILocator/GetMasonryInstallersResponse" message="tns:ILocator_GetMasonryInstallers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILocator" type="tns:ILocator">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLocatorResults">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetLocatorResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractorWithForeignId">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetContractorWithForeignId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractorWithEmail">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetContractorWithEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContractors">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetContractors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoofingDealers">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetRoofingDealers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoofingInstallers">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetRoofingInstallers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuilders">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetBuilders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasonryDealers">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetMasonryDealers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasonryInstallers">
+      <soap:operation soapAction="http://tempuri.org/ILocator/GetMasonryInstallers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Locator">
+    <wsdl:port name="BasicHttpBinding_ILocator" binding="tns:BasicHttpBinding_ILocator">
+      <soap:address location="http://localhost:59579/Locator.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

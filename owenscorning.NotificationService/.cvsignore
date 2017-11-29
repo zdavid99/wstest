@@ -1,0 +1,10 @@
+obj
+*.suo
+PrecompiledWeb
+*.csproj.user
+aspnet_client
+applogs
+*.exclude
+deploy
+bin
+Bin

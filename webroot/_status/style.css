@@ -1,0 +1,118 @@
+body {  font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-size: 11pt; }
+		
+td {  	font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-size: 11pt}		
+		
+th {  	font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-size: 13pt;
+		font-weight: bold}
+				
+p {		font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-size: 11pt}
+		
+H1, H2, H3, H4, H5, H6 {
+		font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-weight: bold }
+
+H1 	{	font-size: 16pt }
+
+H2 	{	font-size: 15pt }
+
+H3 	{	font-size: 13pt}
+
+H4 	{	font-size: 11pt }
+
+H5 	{	font-size: 9pt}
+		
+H6	{	font-size: 9pt;
+		font-style: italic }
+
+ul {  	font-size: 11pt;
+		font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica }
+		
+ol {  	font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-size: 11pt }
+
+button {  font-family: "Courier New", Gill Sans MT, Trebuchet MS, Verdana, Arial, Helvetica;
+		font-size: 11pt; }
+
+A:link { color: #16549E}
+
+A:visited { color: #62A2F0}
+
+.code {	font-family: "Courier New", Courier, mono;
+		font-size: 11pt }
+
+.reversedOut {
+		font-family: "Courier New", Verdana, Helvetica, "sans-serif font-size"; color: #FFFFFF; 9 pt;
+		font-weight: bold;
+		color: #FFFFFF }
+
+.smallprint {  font-family: "Courier New", Helvetica, Verdana, sans-serif; font-size: 8pt}
+
+.sidebar {  font-family: "Courier New", Helvetica, Verdana, sans-serif;
+			font-size: 8pt;
+			margin-left: 6pt;
+			margin-right: 6pt;
+			color: #000066}
+.footnote {  font-family: "Courier New", Helvetica, sans-serif; font-size: 7pt}
+
+
+.fail 
+{
+	font-weight: normal;
+	background-color: #FFC1C1;
+	color: black;
+}
+
+.pass 
+{
+	font-weight: normal;
+	background-color: #87CEFA;
+	color: black;
+}
+
+.skip 
+{
+	font-weight: normal;
+	background-color: #FFFF7E;
+	color: black;
+}
+
+.error 
+{
+	font-weight: normal;
+	background-color: #E0E0E0;
+	color: FF0000;
+}
+
+.outnormal 
+{
+	font-weight: normal;
+	background-color: #E0E0E0;
+	color: black;
+}
+
+.statusnormal 
+{
+	font-weight: bold;
+	background-color: #E0E0E0;
+	color: black;
+}
+
+.statuserror 
+{
+	font-weight: bold;
+	background-color: #E0E0E0;
+	color: #FF0000;
+}
+
+.statuswarning
+{
+	font-weight: bold;
+	background-color: #FFFFCC;
+	color: #000000;
+}
+
+
